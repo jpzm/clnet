@@ -1,0 +1,21 @@
+INTRODUCTION
+============
+
+CLNET stands for `C Library for Network Environment Tools'. This library
+depends on CLADS [0] which is assumed to be in the same directory of CLNET.
+More information about CLNET could be find on its repository [1].
+
+
+CONTACT
+=======
+
+If you have any question about CLNET, send an e-mail to the contact below.
+
+Joao Paulo de Souza Medeiros <ignotus21@gmail.com>
+
+
+REFERENCES
+==========
+
+[0] https://github.com/jpzm/clads/
+[1] https://github.com/jpzm/clnet/
