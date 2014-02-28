@@ -153,7 +153,8 @@ get_tcp_isn(u_char *args,
     *count += 1;
 }
 
-int main(int argc, char **argv)
+int
+main(int argc, char **argv)
 {
     /**
      *
@@ -256,7 +257,6 @@ int main(int argc, char **argv)
         }
     }
 
-
     /**
      * Initialize libnet
      */
@@ -329,19 +329,21 @@ int main(int argc, char **argv)
     {
         perror("shmget");
 
-        exit(1);
+        exit(EXIT_FAILURE);
     }
 
     if ((count = shmat(shmid, NULL, 0)) == (unsigned int *) -1)
     {
         perror("shmat");
 
-        exit(1);
+        exit(EXIT_FAILURE);
     }
 
     *count = 0;
 
     pid = fork();
+
+    clnet_initialize();
 
     if (pid == 0)
     {
@@ -364,6 +366,8 @@ int main(int argc, char **argv)
 
         libnet_destroy(lnet_handle);
     }
+
+    clnet_finalize();
 
     exit(EXIT_SUCCESS);
 }
